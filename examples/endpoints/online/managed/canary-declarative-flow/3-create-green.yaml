@@ -21,9 +21,9 @@ deployments:
       name: env-model1
       version: 1           
       path: .
-      conda_file: file:../../model-1/environment/conda.yml
+      # conda_file: file:../../model-1/environment/conda.yml
       docker:
-        image: mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210301.v1
+        image: acreastus2euap210512.azurecr.io/azureml/pre-built-runner
     instance_type: Standard_F2s_v2
     scale_settings:
       scale_type: manual
@@ -45,9 +45,9 @@ deployments:
       name: env-model2
       version: 1      
       path: .
-      conda_file: file:../../model-2/environment/conda.yml
+      # conda_file: file:../../model-2/environment/conda.yml
       docker:
-        image: mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210301.v1
+        image: acreastus2euap210512.azurecr.io/azureml/pre-built-runner
     instance_type: Standard_F2s_v2
     scale_settings:
       scale_type: manual
