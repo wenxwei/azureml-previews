@@ -16,13 +16,13 @@ deployments:
       code: 
         local_path: ../../model-1/onlinescoring/
       scoring_script: score.py
-    environment: 
+    environment:
       name: env-model1
       version: 1
       path: .
-      conda_file: file:../../model-1/environment/conda.yml
+      # conda_file: file:../../model-1/environment/conda.yml
       docker:
-          image: mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210301.v1
+        image: abbfacb212304d3fbeb9cc4164933ef3.azurecr.io/azureml/azureml_92a029f831ce58d2ed011c3c42d35acb:latest
     instance_type: Standard_F2s_v2
     scale_settings:
       scale_type: manual
