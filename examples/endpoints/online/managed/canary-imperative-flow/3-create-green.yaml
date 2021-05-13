@@ -14,7 +14,7 @@ environment:
   path: .
   # conda_file: file:../../model-2/environment/conda.yml
   docker:
-    image: acreastus2euap210512.azurecr.io/azureml/pre-built-runner
+    image: acreastus2euap210513.azurecr.io/azureml/pre-built-runner
 instance_type: Standard_F2s_v2
 scale_settings:
   scale_type: manual
