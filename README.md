@@ -42,11 +42,7 @@ Endpoints:
 
 Pipelines:
 
-<<<<<<< HEAD
 - [Introduction and set up](previews/pipelines/README.md)
-=======
-- [Introduction and set up](private-previews/pipelines)
->>>>>>> origin/main
 
 ## Contents
 
