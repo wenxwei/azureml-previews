@@ -42,14 +42,18 @@ Endpoints:
 
 Pipelines:
 
+<<<<<<< HEAD
+- [Introduction and set up](previews/pipelines/README.md)
+=======
 - [Introduction and set up](private-previews/pipelines)
+>>>>>>> origin/main
 
 ## Contents
 
 |directory|description|
 |-|-|
-|`.github`|GitHub-specific files like Actions workflow definitions and issue templates|
-|`private-previews`|Self-contained directories of private previews|
+|`.github`|GitHub specific files like Actions workflow yaml definitions and issue templates|
+|`previews`|Self-contained directories of private previews|
 
 ## Contributing
 
