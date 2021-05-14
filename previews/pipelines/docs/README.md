@@ -1,7 +1,7 @@
 ### Setup instructions for Pipeline Job with Command Components preview
 
 Pre-reqs:
-1. AzureML Workspce with a compute cluster created. We strongly recommend using an existing test or sandbox Workspace or creating a new Workspace becuase the private preview bits can have bugs. DO NOT TRY THE PREVIEW ON A WORKSPACE WITH PRODUCTION ASSETS.
+1. AzureML Workspace with a compute cluster created. We strongly recommend using an existing test or sandbox Workspace or creating a new Workspace becuase the private preview bits can have bugs. DO NOT TRY THE PREVIEW ON A WORKSPACE WITH PRODUCTION ASSETS.
 2. If you do not have the Azure CLI installed, follow the installation instructions at https://docs.microsoft.com/cli/azure/install-azure-cli. 2.15 is the minimum version your need. Check the version with `az version`. You can use Azure Cloud Shell which has Azure CLI pre-installed: https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
 
 Steps:
@@ -42,8 +42,8 @@ az config set defaults.group="<your_workspace_resource_group>"
 cd $HOME
 mkdir repos
 cd repos
-git clone https://github.com/Azure/azureml-v2-preview
-cd azureml-v2-preview/pipelines
+git clone https://github.com/Azure/azureml-previews
+cd azureml-previews/pipelines
 ```
 
 ### Known issues (to be fixed soon...)
