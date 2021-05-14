@@ -1,4 +1,0 @@
-Azure-ML Reference
-========
-
-.. azhelpgen::

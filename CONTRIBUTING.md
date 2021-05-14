@@ -22,4 +22,12 @@ All forms of feedback are welcome through issues - please follow the pre-defined
 
 ## Pull Requests
 
-Pull requests (PRs) to this repo require review and approval by the Azure Machine Learning team to merge.
+Pull requests (PRs) to this repo are intended for internal team members.
+
+### Adding a new (private) preview feature
+
+A new preview feature should be self-contained in a subdirectory under [`previews`](previews). It must have an excellent `README.md` file at the root which gives an introduction to the feature and any steps required for trying it.
+
+Markdown files may be used for more articles. It is strongly recommended to follow a similar format and style as required for public preview.
+
+Examples should be PRed to https://github.com/Azure/azureml-examples. 

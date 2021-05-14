@@ -1,4 +1,4 @@
-# PR into Azure/azureml-v2-preview
+# PR into Azure/azureml-previews
 
 ## Checklist
 
