@@ -14,7 +14,7 @@ Welcome to the Azure Machine Learning previews repository!
 
 ## Public previews (MSFT internal)
 
-Public preview examples can be found at https://github.com/Azure/azureml-examples/blob/main/cli. Documentation is currently available for MSFT internal. If enrolled in the private preview, reach out to your rep for a copy of the docs.
+Public preview examples can be found at https://github.com/Azure/azureml-examples/tree/main/cli. Documentation is currently available for MSFT internal. If enrolled in the private preview, reach out to your rep for a copy of the docs.
 
 Installation and set up:
 
@@ -48,7 +48,7 @@ Pipelines:
 
 |directory|description|
 |-|-|
-|`.github`|GitHub specific files like Actions workflow yaml definitions and issue templates|
+|`.github`|GitHub-specific files like Actions workflow yaml definitions and issue templates|
 |`previews`|Self-contained directories of private previews|
 
 ## Contributing
