@@ -42,7 +42,7 @@ Endpoints:
 
 Pipelines:
 
-- [Introduction and set up](private-previews/pipelines/docs/README.md)
+- [Introduction and set up](private-previews/pipelines)
 
 ## Contents
 
