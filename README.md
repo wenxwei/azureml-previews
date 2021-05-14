@@ -48,7 +48,7 @@ Pipelines:
 
 |directory|description|
 |-|-|
-|`.github`|GitHub specific files like Actions workflow yaml definitions and issue templates|
+|`.github`|GitHub-specific files like Actions workflow definitions and issue templates|
 |`private-previews`|Self-contained directories of private previews|
 
 ## Contributing
