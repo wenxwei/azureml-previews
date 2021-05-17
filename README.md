@@ -18,25 +18,26 @@ Public preview examples can be found at https://github.com/Azure/azureml-example
 
 Installation and set up:
 
-- [Install, set up, and use the 2.0 CLI](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cli?branch=release-build-2021-azureml)
+- [Install, set up, and use the 2.0 CLI](https://review.docs.microsoft.com/azure/machine-learning/how-to-configure-cli?branch=release-build-2021-azureml)
     - **Note:** `az extension add -n ml` will not work yet, see above for installation
+- [Set up the VSCode extension](https://review.docs.microsoft.com/azure/machine-learning/how-to-setup-vs-code?branch=release-build-2021-azureml)
 
 Train models (create jobs):
 
-- [Train models (create jobs) with the 2.0 CLI](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-train-cli?branch=release-build-2021-azureml) 
+- [Train models (create jobs) with the 2.0 CLI](https://review.docs.microsoft.com/azure/machine-learning/how-to-train-cli?branch=release-build-2021-azureml) 
 
 Endpoints:
 
-- [What are Azure Machine Learning endpoints?](https://review.docs.microsoft.com/en-us/azure/machine-learning/concept-endpoints?branch=release-build-2021-azureml)
-- [Deploy and score a machine learning model with a managed online endpoint](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-managed-online-endpoints?branch=release-build-2021-azureml)
-- [Safe rollout for online endpoints](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-safely-rollout-managed-endpoints?branch=release-build-2021-azureml)
-- [Use managed online endpoints in the studio](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-use-managed-online-endpoint-studio?branch=release-build-2021-azureml) 
-- [Viewing costs for managed online endpoints](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-view-online-endpoints-costs?branch=release-build-2021-azureml)
-- [Managed online endpoints SKU list](https://review.docs.microsoft.com/en-us/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list?branch=release-build-2021-azureml) 
-- [Monitoring managed online endpoints](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-monitor-online-endpoints?branch=release-build-2021-azureml)
-- [Troubleshooting managed online endpoints](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-managed-online-endpoints?branch=release-build-2021-azureml)
-- [Batch scoring with batch endpoints](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-use-batch-endpoint?branch=release-build-2021-azureml)
-- [Troubleshooting batch endpoints](https://review.docs.microsoft.com/en-us/azure/machine-learning/how-to-troubleshoot-batch-endpoints?branch=release-build-2021-azureml)
+- [What are Azure Machine Learning endpoints?](https://review.docs.microsoft.com/azure/machine-learning/concept-endpoints?branch=release-build-2021-azureml)
+- [Deploy and score a machine learning model with a managed online endpoint](https://review.docs.microsoft.com/azure/machine-learning/how-to-deploy-managed-online-endpoints?branch=release-build-2021-azureml)
+- [Safe rollout for online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-safely-rollout-managed-endpoints?branch=release-build-2021-azureml)
+- [Use managed online endpoints in the studio](https://review.docs.microsoft.com/azure/machine-learning/how-to-use-managed-online-endpoint-studio?branch=release-build-2021-azureml) 
+- [Viewing costs for managed online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-view-online-endpoints-costs?branch=release-build-2021-azureml)
+- [Managed online endpoints SKU list](https://review.docs.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list?branch=release-build-2021-azureml) 
+- [Monitoring managed online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-monitor-online-endpoints?branch=release-build-2021-azureml)
+- [Troubleshooting managed online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-managed-online-endpoints?branch=release-build-2021-azureml)
+- [Batch scoring with batch endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-use-batch-endpoint?branch=release-build-2021-azureml)
+- [Troubleshooting batch endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-batch-endpoints?branch=release-build-2021-azureml)
 
 ## Private previews
 
