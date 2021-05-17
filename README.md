@@ -9,7 +9,7 @@ Welcome to the Azure Machine Learning previews repository!
 3. Install and set up the 2.0 machine learning extension:
 
     ```terminal
-    az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2-public/ml-1.0.0a4-py3-none-any.whl --pip-extra-index-urls https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2-public -y
+    az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2-public/ml-2.0.0a1-py3-none-any.whl --pip-extra-index-urls https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2-public -y
     ```
 
 ## Public previews (MSFT internal)
