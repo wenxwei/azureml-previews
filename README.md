@@ -24,6 +24,7 @@ Installation and set up:
 Train models (create jobs):
 
 - [Train models (create jobs) with the 2.0 CLI](https://review.docs.microsoft.com/azure/machine-learning/how-to-train-cli?branch=release-build-2021-azureml) 
+- [Train models with REST](https://review.docs.microsoft.com/azure/machine-learning/how-to-train-with-rest?branch=release-build-2021-azureml)
 
 Endpoints:
 
@@ -34,6 +35,7 @@ Endpoints:
 - [Viewing costs for managed online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-view-online-endpoints-costs?branch=release-build-2021-azureml)
 - [Managed online endpoints SKU list](https://review.docs.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list?branch=release-build-2021-azureml) 
 - [Monitoring managed online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-monitor-online-endpoints?branch=release-build-2021-azureml)
+- [Tutorial: Access Azure resources with a managed online nedpoint and system-managed identity](https://review.docs.microsoft.com/azure/machine-learning/tutorial-deploy-managed-endpoints-using-system-managed-identity?branch=release-build-2021-azureml)
 - [Troubleshooting managed online endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-managed-online-endpoints?branch=release-build-2021-azureml)
 - [Batch scoring with batch endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-use-batch-endpoint?branch=release-build-2021-azureml)
 - [Troubleshooting batch endpoints](https://review.docs.microsoft.com/azure/machine-learning/how-to-troubleshoot-batch-endpoints?branch=release-build-2021-azureml)
