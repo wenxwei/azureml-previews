@@ -19,7 +19,6 @@ Public preview examples can be found at https://github.com/Azure/azureml-example
 Installation and set up:
 
 - [Install, set up, and use the 2.0 CLI](https://review.docs.microsoft.com/azure/machine-learning/how-to-configure-cli?branch=release-build-2021-azureml)
-    - **Note:** `az extension add -n ml` will not work yet, see above for installation
 - [Set up the VSCode extension](https://review.docs.microsoft.com/azure/machine-learning/how-to-setup-vs-code?branch=release-build-2021-azureml)
 
 Train models (create jobs):
