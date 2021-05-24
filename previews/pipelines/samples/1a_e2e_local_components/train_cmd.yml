@@ -1,0 +1,21 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command_job
+inputs:
+  training_input: 
+    data: 
+      local_path: ./data
+#  max_epocs: 20
+#  learning_rate: 1.8
+#  learning_rate_schedule: 'time-based'
+code:
+  local_path: ./train_src
+environment: azureml:AzureML-Minimal:1
+compute:
+  target: azureml:cpu-cluster
+command: >-
+  python train.py 
+  --training_data {inputs.training_data} 
+  --max_epocs 20   
+  --learning_rate 1.8 
+  --learning_rate_schedule 'time-based' 
+  --model_output ./outputs
