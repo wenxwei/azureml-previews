@@ -60,7 +60,7 @@ az extension remove -n ml; az extension remove -n azure-cli-ml
 az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.79-py3-none-any.whl --pip-extra-index-urls https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2 -y
 ```
 
-3. Follow the setup instructions as documented here: az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.79-py3-none-any.whl --pip-extra-index-urls https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2 -y
+3. Follow the setup instructions as documented here: https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cli#set-up
 
 
 4. Enable private preview features as explained in Step 2 above.
