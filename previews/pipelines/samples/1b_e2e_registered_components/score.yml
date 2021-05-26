@@ -1,5 +1,5 @@
 name: Score
-version: 10
+version: 20
 display_name: Score
 type: command_component
 inputs:

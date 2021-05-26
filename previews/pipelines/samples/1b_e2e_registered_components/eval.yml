@@ -1,5 +1,5 @@
 name: Eval
-version: 10
+version: 20
 display_name: Eval
 type: command_component
 inputs:

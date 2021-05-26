@@ -27,7 +27,7 @@ defaults:
   component_job:
     datastore: azureml:workspaceblobstore
     compute:
-      target: ManojCluster
+      target: cpu-cluster
 
 jobs:
   train-job:
