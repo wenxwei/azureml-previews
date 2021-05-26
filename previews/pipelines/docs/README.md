@@ -36,7 +36,7 @@ git clone https://github.com/Azure/azureml-previews
 cd azureml-previews/previews/pipelines/samples
 ```
 
-4. Go to the respective samples directory and try out the samples as documented in the [samples catalog](../samples/README.md)
+4. Go to the respective samples directory and try out the samples as documented in the [samples catalog](../samples/README.md). Our pick, if you have time to try only one sample: [samples/1b_e2e_registered_components](../samples/1b_e2e_registered_components)
 
 ### Known issues (to be fixed soon...)
 

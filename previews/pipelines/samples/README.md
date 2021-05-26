@@ -1,3 +1,6 @@
+
+Our pick, if you have time to try only one sample: [samples/1b_e2e_registered_components](../samples/1b_e2e_registered_components)
+
 Sample Link|Description
 --|--
 [1a_e2e_local_components](./1a_e2e_local_components) | E2E dummy train-score-eval pipeline with local components
