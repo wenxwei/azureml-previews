@@ -1,5 +1,5 @@
 
-Our pick, if you have time to try only one sample: [samples/1b_e2e_registered_components](../samples/1b_e2e_registered_components)
+Follow the [installation instructions](../docs/README.md) before trying out the samples. Our pick, if you have time to try only one sample: [samples/1b_e2e_registered_components](../samples/1b_e2e_registered_components)
 
 Sample Link|Description
 --|--
