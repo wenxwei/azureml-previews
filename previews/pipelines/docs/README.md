@@ -1,5 +1,21 @@
-### Setup instructions for Pipeline Job with Command Components preview
 
+We are introducing a new and improved way of building Machine Learning Pipelines in AzureML. The new experience is based on Components that form the building blocks of composable and reusable Pipelines. Components enable users specify an input/output interface, execution environment, the command to run and other settings required to run a script. Users can register these Components with the AzureML Workspace and use them across various Pipelines without having to worry about the details and dependencies needed to run the scripts. Registered Components can be used in Pipelines written in YAML and submitted from CLI, authored in Python and created using the drag-n-drop Designer UI in AzureML Studio, offering a consistent Pipelines experience across CLI, SDK and UI surfaces.
+
+### Highlights 
+* <u>Better MLOps with YAML based Pipelines and Components authoring</u>: A declarative YAML based Pipeline definition enables clear separation between the orchestration and infrastructure code from the data science code that can use languages like Python or R. 
+* <u>Collaborate and share ML workflow assets with Components</u>: Unlike Pipelines v1 in which you couldn't easily use a Pipeline Step written for one Pipeline in another Pipeline, Components are not bound Pipelines but are assets that can be independently checked-into Git repos, registered with Workspaces and used across different Pipelines. 
+* <u>Manage Component lifecycle and trigger Pipeline Jobs with CLI 2.0</u>: YAML based Components and Pipelines is part of the broader CLI 2.0 wave of features which means that YAML syntax and terminology is consistent with other improvements and new features shipping with CLI 2.0. 
+
+### What's available today?
+* Components to run Python scripts, R scripts or any Command (aka Command Component) with YAML/CLI. 
+* Pipeline Job to orchestrate Command Components. 
+
+### What's coming next? 
+* Python and Designer UI support for authoring Pipeline Jobs with Components.
+* More components - Sweep, AutoML, Distributed Training, Batch, etc. 
+* Subgraphs (aka Pipeline Components) for large and complex Pipelines.
+
+### How to get started?
 Pre-requisites:
 1. AzureML Workspace with a compute cluster. We strongly recommend using an existing test or sandbox Workspace or creating a new Workspace because the private preview bits can have bugs. DO NOT TRY THE PREVIEW ON A WORKSPACE WITH PRODUCTION ASSETS.
 2. If you do not have the Azure CLI installed, follow the installation instructions at https://docs.microsoft.com/cli/azure/install-azure-cli. 2.15 is the minimum version your need. Check the version with `az version`. You can use Azure Cloud Shell which has Azure CLI pre-installed: https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart.
@@ -7,13 +23,12 @@ Pre-requisites:
 4. (Optional) Familiarize yourself with CLI 2.0 Jobs: https://docs.microsoft.com/en-us/azure/machine-learning/how-to-train-cli
 
 Steps:
-
 1. Make sure your setup is working with either of the list commands: `az ml compute list`, `az ml jobs list`, or `az ml data list`
 
 2. Enable private preview features.
 Linux/Bash:
 ```
- export AZURE_ML_CLI_PRIVATE_FEATURES_ENABLED="true"`
+ export AZURE_ML_CLI_PRIVATE_FEATURES_ENABLED="true"
 ```
 Windows Command Prompt:
 ```
