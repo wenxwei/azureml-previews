@@ -5,6 +5,7 @@ Sample Link|Description
 --|--
 [1a_e2e_local_components](./1a_e2e_local_components) | E2E dummy train-score-eval pipeline with local components
 [1b_e2e_registered_components](./1b_e2e_registered_components) | E2E dummy train-score-eval pipeline with registered components
+[1c_e2e_inline_components](./1c_e2e_inline_components) | E2E dummy train-score-eval pipeline with components defined inline in pipeline job
 [2a_basic_component](./2a_basic_component) | Hello World component example
 [2b_component_with_input_output](./2b_component_with_input_output) | Component with inputs and outputs
 [2c_registered_component](./2c_registered_component) | Registering a component and using it in a Pipeline Job
