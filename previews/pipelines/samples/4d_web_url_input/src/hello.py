@@ -27,7 +27,7 @@ for filename in arr:
 
 cur_time_str = datetime.now().strftime("%b-%d-%Y-%H-%M-%S")
 
-print("Writing file: %s" % os.path.join(args.sample_output_data,"file-" + cur_time_str + ".txt"))
-with open(os.path.join(args.sample_output_data,"file-" + cur_time_str + ".txt"), "wt") as text_file:
+print("Writing file: %s" % os.path.join(args.output_data,"file-" + cur_time_str + ".txt"))
+with open(os.path.join(args.output_data,"file-" + cur_time_str + ".txt"), "wt") as text_file:
     print(f"Logging date time: {cur_time_str}", file=text_file)
 
