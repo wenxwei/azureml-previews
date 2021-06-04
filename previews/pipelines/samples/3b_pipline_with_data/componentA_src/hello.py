@@ -10,11 +10,11 @@ print ("Hello Python World...\nI'm componentA :-)")
 
 args = parser.parse_args()
 
-print("componentA_input path: %s" % args.input_data)
-print("componentA_output path: %s" % args.output_data)
+print("componentA_input path: %s" % args.componentA_input)
+print("componentA_output path: %s" % args.componentA_output)
 
 print("files in input path: ")
-arr = os.listdir(args.input_data)
+arr = os.listdir(args.componentA_input)
 print(arr)
 
 for filename in arr:
