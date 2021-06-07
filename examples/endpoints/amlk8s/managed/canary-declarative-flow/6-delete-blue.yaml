@@ -20,12 +20,13 @@ deployments:
     max_queue_wait_ms: 3000
     request_timeout_ms: 3000
   scale_settings:
-    instance_count: 2
+    max_instances: 2
+    min_instances: 1
     scale_type: auto
 identity:
   type: system_assigned
 name: my-endpoint
-target: azureml:/subscriptions/589c7ae9-223e-45e3-a191-98433e0821a9/resourceGroups/localtest-r6-amlarc-rg/providers/Microsoft.MachineLearningServices/workspaces/localtest-r6-amlarc-ws/computes/localtest-r6-amlarc
+target: azureml:/subscriptions/589c7ae9-223e-45e3-a191-98433e0821a9/resourceGroups/localtest-r6-amlarc-rg/providers/Microsoft.MachineLearningServices/workspaces/localtest-r6-amlarc-ws/computes/localtest-r6-aml
 traffic:
   green: 100
 type: online

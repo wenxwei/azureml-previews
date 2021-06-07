@@ -7,6 +7,12 @@ traffic:
 identity:
   type: system_assigned
 target: azureml:/subscriptions/{{subscriptionId}}/resourceGroups/{{resourceGroup}}/providers/Microsoft.MachineLearningServices/workspaces/{{workspaceName}}/computes/{{computeName}}
+tags:
+  tag1: first tag
+  tag2: second tag
+properties:
+  prop1: first prop
+  prop2: second prop
 
 deployments:
   #blue deployment
@@ -27,8 +33,7 @@ deployments:
       docker:
         image: mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20210301.v1
     scale_settings:
-      scale_type: manual
-      instance_count: 1
+      scale_type: auto
       min_instances: 1
       max_instances: 2
     request_settings:
