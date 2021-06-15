@@ -18,7 +18,7 @@ outputs:
     type: path
 code:
   local_path: ./train_src
-environment: azureml:AzureML-minimal-ubuntu18.04-py37-cpu-inference:2
+environment: azureml:AzureML-PyTorch-1.6-GPU:10
 
 command: >-
   python train.py 
