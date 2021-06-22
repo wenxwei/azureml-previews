@@ -37,20 +37,17 @@ Endpoints:
 
 ## Private previews
 
-Pipelines:
-
-- [Introduction and set up](previews/pipelines)
-
-AutoML:
-
-- [Introduction and set up](https://github.com/Azure/AutoML-vNext-Preview)
+**preview**|**description**
+-|-
+[pipelines](previews/pipelines/docs)|Pipelines for the CLI (v2), defined through YAML specification
+[interactive-job](previews/interactive-job)|Run an interactive job on Arc compute
+[automl](https://github.com/Azure/AutoML-vNext-Preview)|AutoML for the CLI (v2), defined through YAML specification
 
 ## Contents
 
-|directory|description|
-|-|-|
-|`.github`|GitHub-specific files like Actions workflow definitions and issue templates|
-|`previews`|Self-contained directories of private previews|
+directory|description
+-|-
+`previews`|Self-contained directories of private previews
 
 ## Contributing
 

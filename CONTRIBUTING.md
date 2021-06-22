@@ -24,10 +24,31 @@ All forms of feedback are welcome through issues - please follow the pre-defined
 
 Pull requests (PRs) to this repo are intended for internal team members.
 
-### Adding a new (private) preview feature
+## New (private) preview features
 
 A new preview feature should be self-contained in a subdirectory under [`previews`](previews). It must have an excellent `README.md` file at the root which gives an introduction to the feature and any steps required for trying it.
 
 Markdown files may be used for more articles. It is strongly recommended to follow a similar format and style as required for public preview.
 
 Examples should be PRed to https://github.com/Azure/azureml-examples. 
+
+Create a PR to:
+
+- [ ] create a new subdirectory under "previews"
+    - [ ] create an excellent README.md for the new directory with:
+        - [ ] H1 title and one sentence (or paragraph) value prop for the preview
+        - [ ] H2 overview
+        - [ ] H2 installation and set up (this should refer to public install + feature flag)
+        - [ ] H2 getting started
+        - [ ] H2 contents
+    - [ ] create a "docs" subdirectory
+        - [ ] add one or more "how-to" articles corresponding to a user's job to be done which is enabled or made easier by this feature
+
+- [ ] modify the root `README.md` to add a link to the preview subdirectory
+
+Then, merge the PR. If you do not have access, contact a team member internally.
+
+## Update (private) preview features
+
+Create a PR to modify the preview subdirectory as needed. Merge the PR.
+
