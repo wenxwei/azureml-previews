@@ -30,7 +30,7 @@ A new preview feature should be self-contained in a subdirectory under [`preview
 
 Markdown files may be used for more articles. It is strongly recommended to follow a similar format and style as required for public preview.
 
-Examples should live in [Azure/azureml-examples], preferablly either PRed or merged into the `main` branch (for continuous testing).
+Examples should live in [Azure/azureml-examples](https://github.com/Azure/azureml-examples), preferablly either PRed or merged into the `main` branch (for continuous testing).
 
 Create a PR to:
 
