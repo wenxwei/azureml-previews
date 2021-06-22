@@ -36,14 +36,13 @@ Create a PR to:
 
 - [ ] create a new subdirectory under "previews"
     - [ ] create an excellent README.md for the new directory with:
-        - [ ] H1 title and one sentence (or paragraph) value prop for the preview
-        - [ ] H2 overview
-        - [ ] H2 installation and set up (this should refer to public install + feature flag)
-        - [ ] H2 getting started
-        - [ ] H2 contents
+        - [ ] H1 title of the preview (e.g. "# Pipelines" or "# Interactive jobs") and one sentence (or paragraph) value prop
+        - [ ] H2 "## Overview"
+        - [ ] H2 "## Installation and set up" - (this should refer to public install + feature flag)
+        - [ ] H2 "## Getting started"
+        - [ ] H2 "## Contents"
     - [ ] create a "docs" subdirectory
         - [ ] add one or more "how-to" articles corresponding to a user's job to be done which is enabled or made easier by this feature
-
 - [ ] modify the root `README.md` to add a link to the preview subdirectory
 
 Then, merge the PR. If you do not have access, contact a team member internally.
