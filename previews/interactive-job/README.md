@@ -4,12 +4,9 @@ ML model training usually requires lots of experimentation and iterations. With 
 Interactive job is supported on **AMLArc Compute** and will be available on AML Compute in later release.
 
 ## Prerequisites
-- [Create an AzureML workspace](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace?tabs=python) if you don't have one already.
-- You have a Kubernetes cluster up and running, and learn about [Azure Arc enabled Kubernetes](https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/overview) and [cluster extension](https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/conceptual-extensions)
-- Your Kubernetes cluster is [connected to Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/quickstart-connect-cluster).
-- You've met the pre-requisites listed under the [generic cluster extensions documentation](https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/extensions#prerequisites). Azure CLI extension k8s-extension version >=**0.4.3**.
-- An Azure Arc-enabled Kubernetes cluster [is attached to AzureML workspace](https://github.com/Azure/amlarc-preview/blob/main/docs/attach-compute.md).
-    - If you are running on AKS, append the following `--configuration-settings` to your original command `amloperator.enableInteractiveProxy=True amloperator.interactiveProxyPort=4443`
+- Complete the **Prerequisites** and **Getting started** in [this document](https://github.com/Azure/AML-Kubernetes)
+- When you deploy AzureML extension to your Azure Arc enabled Kubernetes cluster (`az k8s-extension create`), make sure you append the configurations to turn on interactive job.
+    - If you are running on AKS, append `amloperator.enableInteractiveProxy=True amloperator.interactiveProxyPort=4443` in `--configuration-settings`
     - If you are on Kubernetes onprem, you need to configure `amloperator.entryPointMachineForEndpoint` as one of the machines (IP or machine name) in Kubernetes cluster.
 - (Optional) [an AzureML dataset is created](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-connect-data-ui) if your input data is downloaded in Azure blob. You can skip this step if you will download data after you log in to the interactive job.
 
