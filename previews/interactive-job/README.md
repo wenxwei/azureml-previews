@@ -1,6 +1,5 @@
 ## Overview
-
-An interactive job is the new experience in AzureML where back-and-forth interaction can be performed between users and compute resources with different endpoints and tools (e.g. JupyterNotebook, JupyterLab, VSCode, TensorBoard and custom endpoints). A user can submit an interactive job via AzureML studio UI or CLI to book the compute resource with required environment, login to the booked resources and iterate on model development, monitor the training progress or debug & troubleshoot the scripts. With interactive job experience, it will accelerate the speed for ML builders to experiment and train models, while keep operation cost optimized as a team for resource allocation & utilization.
+ML model training usually requires lots of experimentation and iterations. With the new AzureML interactive job experience, data scientists can now use 2.0 CLI or the studio portal to quickly check out their required compute resources with custom environment, login to the compute target via JupyterNotebook, JupyterLab, VSCode, TensorBoard and custom endpoints to run training scripts, monitor the training progress or debug & troubleshoot the model like they usually do on their local machines, while keeping the operation cost optimized for resource allocation and utilization as a team.
 
 Interactive job is supported on **AMLArc Compute** and will be available on AML Compute in later release.
 
