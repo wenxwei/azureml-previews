@@ -1,7 +1,7 @@
 ## Overview
 ML model training usually requires lots of experimentation and iterations. With the new AzureML interactive job experience, data scientists can now use 2.0 CLI or the studio portal to quickly check out their required compute resources with custom environment, login to the compute target via JupyterNotebook, JupyterLab, VSCode, TensorBoard and custom endpoints to run training scripts, monitor the training progress or debug & troubleshoot the model like they usually do on their local machines, while keeping the operation cost optimized for resource allocation and utilization as a team.
 
-Interactive job is supported on **AMLArc Compute** and will be available on AML Compute in later release.
+Interactive job is supported on **AMLArc Compute** and will be available on AML Compute and Compute Instance in later releases.
 
 ## Prerequisites
 - Complete the **Prerequisites** and **Getting started** in [this document](https://github.com/Azure/AML-Kubernetes)
