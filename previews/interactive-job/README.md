@@ -12,30 +12,23 @@ Interactive job is supported on **AMLArc Compute** and will be available on AML 
 
 ## Get started
 ### Submit an interactive job via AzureML 2.0 CLI
-1. Follow this guide to [install, set up and get familiar with the 2.0 CLI](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cli).
-1. Create a job yaml `job.yaml` with below content. Make sure to replace `your job name`, `your input name` and `your registered dataset name` with your own values. If you want to use custom environment, follow the examples in [this tutorial](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-train-cli). 
+1. [Install, set up and get familiar with the 2.0 CLI](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cli).
+1. Create a job yaml `job.yaml` with below content. Make sure to replace `your job name` and `your attached amlarc compute name` with your own values. If you want to use custom environment, follow the examples in [this tutorial](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-train-cli). 
 ```dotnetcli
 name: <your job name> #job name needs to be updated every time you submit it
-command: ls -lh {inputs.<your input name>} && sleep infinity #the first command is used to mount the dataset to job container, "sleep infinity" is put at the end to make sure the resource is reserved.
+command: sleep infinity # you can add other commands before "sleep infinity" but make sure "sleep infinity" is put at the end to make sure the resource is reserved.
 environment: azureml:AzureML-Minimal:1
 compute:
   target: azureml:<your attached amlarc compute name>
-inputs:
-  <your input name>:
-    data: azureml:<your registered dataset name:version>
-    mode: mount
 interaction_endpoints:
   "my_jupyter":
-    type: "Jupyter"
-    port: 40005
+    type: "Jupyter" # Jupyter Notebook
   "my_tensorboard":
     type: "TensorBoard"
-    port: 40006
     properties:
-      logDir: "tblog"
+      logDir: "~/tblog" # where you want to store the TensorBoard output 
   "my_jupyterlab":
     type: "JupyterLab"
-    port: 40007
 ```
 3. Run command `az ml job create --workspace-name <your workspace name> --resource-group <your resource group name> --subscription <sub-id> --file <path to your job yaml file> `
 
@@ -56,10 +49,20 @@ interaction_endpoints:
 1. It might take a few minutes to start the job and endpoints specified. After the job is submitted and in **Running** state, you can connect to the endpoints by finding them from the run detail page on the studio.
 1. You can connect to these endpoints by clicking the links from **Connect to compute**. Please note only job owner is authorized to connect to these endpoints.
 ![screenshot connect-to-compute](./media/connect-to-compute.png)
-1. Open a terminal from Jupyter Notebook or Jupyter Lab and start interacting within the job container. You can find the mounted data in `/tmp` folder.
+1. Open a terminal from Jupyter Notebook or Jupyter Lab and start interacting within the job container. You are landed on the home folder **/home/amluser**. **my_files** is a user level folder where you can keep your scripts and output data there. Next time when you submit a new job, this folder will be mounted to it as well.
+![screenshot my_files](./media/my_files.png)
+1. You can find the mounted data in `/tmp` folder.
 ![screenshot open-terminal](./media/open-terminal.png) 
 1. If you run into any issues, the interactive endpoint logs can be found from **azureml-logs->azureml->services** and **azureml-logs->70_driver_log.txt** under **Outputs + logs** tab.
 ![screenshot check-logs](./media/logs.png)
+
+### Release the compute resource
+1. Once you are done with the training, go to the run detail page to cancel the job. This will release the compute resource. Alternatively, use `az ml job cancel -n <your job name> -w <your workspace name> -g <your resource group name>`
+![screenshot cancel-job](./media/cancel-job.png)
+
+### Resubmit a job with the previous settings
+1. You can resubmit a job on the run detail page by clicking **Resubmit**. The wizard will have all the settings kept in previous run. You can also resubmit other's job if needed.
+![screenshot resubmit-job](./media/resubmit-job.png)
 
 ## Contact us
 Reach out to us: interactivejobsfc@microsoft.com if you have any questions or feedback.
