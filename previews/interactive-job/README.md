@@ -7,6 +7,7 @@ Interactive job is supported on **AMLArc Compute** and will be available on AML 
 - Complete the **Prerequisites** and **Getting started** in [this document](https://github.com/Azure/AML-Kubernetes)
 - When you deploy AzureML extension to your Azure Arc enabled Kubernetes cluster (`az k8s-extension create`), make sure you append the configurations to turn on interactive job.
     - If you are running on AKS, append `amloperator.enableInteractiveProxy=True amloperator.interactiveProxyPort=4443` in `--configuration-settings` like below (if your cluster is already running, `az k8s-extension create` will update the settings):
+
     ```
     az k8s-extension create --cluster-type connectedClusters --cluster-name <myAzureArcK8s> --resource-group <myRG> --name trainingCompute --extension-type Microsoft.AzureML.Kubernetes --scope cluster --configuration-settings enableTraining=True amloperator.enableInteractiveProxy=True amloperator.interactiveProxyPort=4443
     ```
