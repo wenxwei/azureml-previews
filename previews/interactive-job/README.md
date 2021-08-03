@@ -39,7 +39,7 @@ interaction_endpoints:
 3. Run command `az ml job create --workspace-name <your workspace name> --resource-group <your resource group name> --subscription <sub-id> --file <path to your job yaml file> `
 
 ### Submit an interactive job via AzureML studio portal
-1. Create a new job from the left navigation pane or homepage of the studio portal (**turn on flight** by appending `&flight=jobsubmissionAMLArc` to the end of the URL).
+1. Create a new job from the left navigation pane or homepage of the studio portal (**turn on flight** by appending `&flight=` to the end of the URL).
 ![screenshot new-job-ui](./media/new-job.png)
 1. Choose `Kubernetes` as the compute type and specify how many nodes you need in `Instance count`.
 ![screenshot select-compute-ui](./media/compute-amlarc.png)
