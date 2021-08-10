@@ -1,5 +1,5 @@
 name: Eval
-version: 20
+version: 21
 display_name: Eval
 type: command_component
 inputs:
@@ -13,5 +13,5 @@ code:
   local_path: ./eval_src
 command: >-
   python eval.py 
-  --scoring_result {inputs.scoring_result} 
-  --eval_output {outputs.eval_output}
+  --scoring_result ${{inputs.scoring_result}} 
+  --eval_output ${{outputs.eval_output}}

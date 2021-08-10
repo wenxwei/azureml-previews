@@ -18,8 +18,7 @@ jobs:
     compute:
       target: azureml:ManojCluster
     inputs:
-      sample_input_data: inputs.pipeline_sample_input_data
-      sample_input_string: inputs.pipeline_sample_input_string
+      sample_input_data: ${{inputs.pipeline_sample_input_data}}
+      sample_input_string: ${{inputs.pipeline_sample_input_string}}
     outputs:
-      sample_output_data: outputs.pipeline_sample_output_data
-
+      sample_output_data: ${{outputs.pipeline_sample_output_data}}

@@ -35,11 +35,18 @@ Once you submit the job, you will find the URL to the Studio UI view the job gra
 
 Sample output
 ```
-manoj@Azure:~/clouddrive/repos/AzureML/samples/1b_e2e_registered_components$ az ml component create --file train.yml --set version=20
+(base) root@MABABLESDESKTOP:/mnt/c/CODE/repos/azureml-previews/previews/pipelines/samples/1b_e2e_registered_components
+# az ml component create --file train.yml
 Command group 'ml component' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 {
-  "code": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/codes/13eec8de-86ac-4bc8-bfeb-4f6fe6b2f0fa/versions/1",
-  "command": "python train.py  --training_data {inputs.training_data}  --max_epocs {inputs.max_epocs}    --learning_rate {inputs.learning_rate}  --learning_rate_schedule {inputs.learning_rate_schedule}  --model_output {outputs.model_output}",
+  "code": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/codes/09165d55-89b1-4e8c-9d6f-497a736ceebd/versions/1",
+  "command": "python train.py  --training_data ${{inputs.training_data}}  --max_epocs ${{inputs.max_epocs}}    --learning_rate ${{inputs.learning_rate}}  --learning_rate_schedule ${{inputs.learning_rate_schedule}}  --model_output ${{outputs.model_output}}",
+  "creation_context": {
+    "created_at": "2021-08-06T00:58:28.309732+00:00",
+    "created_by": "Manoj Bableshwar",
+    "created_by_type": "User",
+    "last_modified_at": "2021-08-06T00:58:28.448864+00:00"
+  },
   "display_name": "Train",
   "environment": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/environments/AzureML-Minimal/versions/1",
   "inputs": {
@@ -71,13 +78,20 @@ Command group 'ml component' is experimental and under development. Reference an
   },
   "tags": {},
   "type": "command_component",
-  "version": 20
+  "version": 21
 }
-manoj@Azure:~/clouddrive/repos/AzureML/samples/1b_e2e_registered_components$ az ml component create --file score.yml --set version=20
+(base) root@MABABLESDESKTOP:/mnt/c/CODE/repos/azureml-previews/previews/pipelines/samples/1b_e2e_registered_components
+# az ml component create --file score.yml
 Command group 'ml component' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 {
-  "code": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/codes/aefc1434-4823-4a49-9ef4-2ff397b88955/versions/1",
-  "command": "python score.py  --model_input {inputs.model_input}  --test_data {inputs.test_data} --score_output {outputs.score_output}",
+  "code": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/codes/f76e6888-2d6b-4abb-a482-0957d77e366b/versions/1",
+  "command": "python score.py  --model_input ${{inputs.model_input}}  --test_data ${{inputs.test_data}} --score_output ${{outputs.score_output}}",
+  "creation_context": {
+    "created_at": "2021-08-06T00:58:43.705469+00:00",
+    "created_by": "Manoj Bableshwar",
+    "created_by_type": "User",
+    "last_modified_at": "2021-08-06T00:58:43.790859+00:00"
+  },
   "display_name": "Score",
   "environment": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/environments/AzureML-Minimal/versions/1",
   "inputs": {
@@ -99,13 +113,20 @@ Command group 'ml component' is experimental and under development. Reference an
   },
   "tags": {},
   "type": "command_component",
-  "version": 20
+  "version": 21
 }
-manoj@Azure:~/clouddrive/repos/AzureML/samples/1b_e2e_registered_components$ az ml component create --file eval.yml --set version=20
+(base) root@MABABLESDESKTOP:/mnt/c/CODE/repos/azureml-previews/previews/pipelines/samples/1b_e2e_registered_components
+# az ml component create --file eval.yml
 Command group 'ml component' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 {
-  "code": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/codes/03df61e7-87d5-44e4-8af0-ae073c00cdb9/versions/1",
-  "command": "python eval.py  --scoring_result {inputs.scoring_result}  --eval_output {outputs.eval_output}",
+  "code": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/codes/d6cc4cfe-1f5f-4c5b-b912-8e903ba1571b/versions/1",
+  "command": "python eval.py  --scoring_result ${{inputs.scoring_result}}  --eval_output ${{outputs.eval_output}}",
+  "creation_context": {
+    "created_at": "2021-08-06T00:59:00.079631+00:00",
+    "created_by": "Manoj Bableshwar",
+    "created_by_type": "User",
+    "last_modified_at": "2021-08-06T00:59:00.248549+00:00"
+  },
   "display_name": "Eval",
   "environment": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/environments/AzureML-Minimal/versions/1",
   "inputs": {
@@ -123,18 +144,18 @@ Command group 'ml component' is experimental and under development. Reference an
   },
   "tags": {},
   "type": "command_component",
-  "version": 20
+  "version": 21
 }
-
-manoj@Azure:~/clouddrive/repos/AzureML/samples/1b_e2e_registered_components$ az ml  job create --file pipeline.yml --set defaults.component_job.compute.target=manojcompute6
+(base) root@MABABLESDESKTOP:/mnt/c/CODE/repos/azureml-previews/previews/pipelines/samples/1b_e2e_registered_components
+# az ml job create --file pipeline.yml
 Command group 'ml job' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
-Custom pipeline job names are not supported yet. Please refer to the created pipeline job using the name: 94b5dcf9-672e-42d1-97f4-83cb0b7f1b69
+Custom pipeline job names are not supported yet. Please refer to the created pipeline job using the name: 63afda78-7b18-4953-a9de-d5af81ad1276
 {
   "compute": {
-    "target": "azureml:manojcompute6"
+    "target": "azureml:cpu-cluster"
   },
   "creation_context": {
-    "created_at": "2021-05-11T00:24:14.106082+00:00",
+    "created_at": "2021-08-06T00:59:27.360764+00:00",
     "created_by": "Manoj Bableshwar",
     "created_by_type": "User"
   },
@@ -144,23 +165,23 @@ Custom pipeline job names are not supported yet. Please refer to the created pip
     }
   },
   "experiment_name": "1b_e2e_registered_components",
-  "id": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/jobs/94b5dcf9-672e-42d1-97f4-83cb0b7f1b69",
+  "id": "azureml:/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace/jobs/63afda78-7b18-4953-a9de-d5af81ad1276",
   "inputs": {
-    "pipeline_job_learning_rate_schedule": {},
+    "pipeline_job_learning_rate_schedule": "time-based",
     "pipeline_job_test_input": {
-      "data": {},
+      "data": "azureml:fc300bef-92cc-405f-974f-6b1237c8a2ac:1",
       "mode": "mount"
     },
     "pipeline_job_training_input": {
-      "data": {},
+      "data": "azureml:a8d3e491-3a31-4cb1-9dd9-0a619213b08e:1",
       "mode": "mount"
     },
-    "pipeline_job_training_learning_rate": {},
-    "pipeline_job_training_max_epocs": {}
+    "pipeline_job_training_learning_rate": "1.8",
+    "pipeline_job_training_max_epocs": 20
   },
   "interaction_endpoints": {
     "Studio": {
-      "endpoint": "https://ml.azure.com/runs/94b5dcf9-672e-42d1-97f4-83cb0b7f1b69?wsid=/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourcegroups/OpenDatasetsPMRG/workspaces/OpenDatasetsPMWorkspace&tid=72f988bf-86f1-41af-91ab-2d7cd011db47"
+      "endpoint": "https://ml.azure.com/runs/63afda78-7b18-4953-a9de-d5af81ad1276?wsid=/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourcegroups/OpenDatasetsPMRG/workspaces/OpenDatasetsPMWorkspace&tid=72f988bf-86f1-41af-91ab-2d7cd011db47"
     },
     "Tracking": {
       "endpoint": "azureml://eastus2.api.azureml.ms/mlflow/v1.0/subscriptions/21d8f407-c4c4-452e-87a4-e609bfb86248/resourceGroups/OpenDatasetsPMRG/providers/Microsoft.MachineLearningServices/workspaces/OpenDatasetsPMWorkspace?"
@@ -168,70 +189,68 @@ Custom pipeline job names are not supported yet. Please refer to the created pip
   },
   "jobs": {
     "evaluate-job": {
-      "component": "azureml:Eval:20",
+      "component": "azureml:Eval:21",
       "inputs": {
-        "scoring_result": "jobs.score-job.outputs.score_output"
+        "scoring_result": "${{jobs.score-job.outputs.score_output}}"
       },
       "outputs": {
-        "eval_output": {}
+        "eval_output": "${{outputs.pipeline_job_evaluation_report}}"
       },
       "type": "component_job"
     },
     "score-job": {
-      "component": "azureml:Score:20",
+      "component": "azureml:Score:21",
       "inputs": {
-        "model_input": "jobs.train-job.outputs.model_output",
-        "test_data": "inputs.pipeline_job_test_input"
+        "model_input": "${{jobs.train-job.outputs.model_output}}",
+        "test_data": "${{inputs.pipeline_job_test_input}}"
       },
       "outputs": {
-        "score_output": {}
+        "score_output": "${{outputs.pipeline_job_scored_data}}"
       },
       "type": "component_job"
     },
     "train-job": {
-      "component": "azureml:Train:20",
+      "component": "azureml:Train:21",
       "inputs": {
-        "learning_rate": "inputs.pipeline_job_training_learning_rate",
-        "learning_rate_schedule": "inputs.pipeline_job_learning_rate_schedule",
-        "max_epocs": "inputs.pipeline_job_training_max_epocs",
-        "training_data": "inputs.pipeline_job_training_input"
+        "learning_rate": "${{inputs.pipeline_job_training_learning_rate}}",
+        "learning_rate_schedule": "${{inputs.pipeline_job_learning_rate_schedule}}",
+        "max_epocs": "${{inputs.pipeline_job_training_max_epocs}}",
+        "training_data": "${{inputs.pipeline_job_training_input}}"
       },
       "outputs": {
-        "model_output": {}
+        "model_output": "${{outputs.pipeline_job_trained_model}}"
       },
       "type": "component_job"
     }
   },
-  "name": "94b5dcf9-672e-42d1-97f4-83cb0b7f1b69",
+  "name": "63afda78-7b18-4953-a9de-d5af81ad1276",
   "outputs": {
     "pipeline_job_evaluation_report": {
       "data": {
-        "name": "5a10a41d-0b65-4c3f-9ece-62ef7bbe59ce",
-        "path": "/report",
-        "version": 1
+        "path": "/report"
       },
       "mode": "mount"
     },
     "pipeline_job_scored_data": {
       "data": {
-        "name": "79b5dcdf-07a5-45f3-b9fa-ca512c944e49",
-        "path": "/scored_data",
-        "version": 1
+        "path": "/scored_data"
       },
       "mode": "mount"
     },
     "pipeline_job_trained_model": {
       "data": {
-        "name": "0775e4dc-b8f0-4e4f-9b12-8c0b3cf7278e",
-        "path": "/trained-model",
-        "version": 1
+        "path": "/trained-model"
       },
       "mode": "mount"
     }
   },
   "properties": {
-    "azureml.parameters": "{\"pipeline_job_training_max_epocs\":\"20\",\"pipeline_job_training_learning_rate\":\"1\",\"pipeline_job_learning_rate_schedule\":\"time-based\"}",
+    "azureml.git.dirty": "True",
+    "azureml.parameters": "{\"pipeline_job_training_max_epocs\":\"20\",\"pipeline_job_training_learning_rate\":\"1.8\",\"pipeline_job_learning_rate_schedule\":\"time-based\"}",
     "azureml.runsource": "azureml.PipelineRun",
+    "mlflow.source.git.branch": "mabables/input-output-syntax",
+    "mlflow.source.git.commit": "30f78ad4d561068a5bb5f51fe5f94965022d00ac",
+    "mlflow.source.git.repoURL": "https://github.com/Azure/azureml-previews",
     "runSource": "MFE",
     "runType": "HTTP"
   },
@@ -242,7 +261,8 @@ Custom pipeline job names are not supported yet. Please refer to the created pip
   },
   "type": "pipeline_job"
 }
-
+(base) root@MABABLESDESKTOP:/mnt/c/CODE/repos/azureml-previews/previews/pipelines/samples/1b_e2e_registered_components
+# 
 ```
 
 

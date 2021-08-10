@@ -27,21 +27,21 @@ jobs:
     type: component_job
     component: file:./componentA.yml
     inputs:
-      componentA_input: inputs.pipeline_sample_input_data
+      componentA_input: ${{inputs.pipeline_sample_input_data}}
     outputs:
-      componentA_output: outputs.pipeline_sample_output_data_A
+      componentA_output: ${{outputs.pipeline_sample_output_data_A}}
   componentB_job:
     type: component_job
     component: file:./componentB.yml
     inputs:
-      componentB_input: jobs.componentA_job.outputs.componentA_output
+      componentB_input: ${{jobs.componentA_job.outputs.componentA_output}}
     outputs:
-      componentB_output: outputs.pipeline_sample_output_data_B
+      componentB_output: ${{outputs.pipeline_sample_output_data_B}}
   componentC_job:
     type: component_job
     component: file:./componentC.yml
     inputs:
-      componentC_input: jobs.componentB_job.outputs.componentB_output
+      componentC_input: ${{jobs.componentB_job.outputs.componentB_output}}
     outputs:
-      componentC_output: outputs.pipeline_sample_output_data_C
+      componentC_output: ${{outputs.pipeline_sample_output_data_C}}
 

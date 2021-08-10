@@ -27,33 +27,33 @@ defaults:
   component_job:
     datastore: azureml:workspaceblobstore
     compute:
-      target: cpu-cluster
+      target: azureml:cpu-cluster
 
 jobs:
   train-job:
     type: component_job
-    component: azureml:Train:20
+    component: azureml:Train:21
     inputs:
-      training_data: inputs.pipeline_job_training_input
-      max_epocs: inputs.pipeline_job_training_max_epocs
-      learning_rate: inputs.pipeline_job_training_learning_rate
-      learning_rate_schedule: inputs.pipeline_job_learning_rate_schedule
+      training_data: ${{inputs.pipeline_job_training_input}}
+      max_epocs: ${{inputs.pipeline_job_training_max_epocs}}
+      learning_rate: ${{inputs.pipeline_job_training_learning_rate}}
+      learning_rate_schedule: ${{inputs.pipeline_job_learning_rate_schedule}}
     outputs:
-      model_output: outputs.pipeline_job_trained_model
+      model_output: ${{outputs.pipeline_job_trained_model}}
   
   score-job:
     type: component_job
-    component: azureml:Score:20
+    component: azureml:Score:21
     inputs:
-      model_input: jobs.train-job.outputs.model_output
-      test_data: inputs.pipeline_job_test_input
+      model_input: ${{jobs.train-job.outputs.model_output}}
+      test_data: ${{inputs.pipeline_job_test_input}}
     outputs:
-      score_output: outputs.pipeline_job_scored_data
+      score_output: ${{outputs.pipeline_job_scored_data}}
 
   evaluate-job:
     type: component_job
-    component: azureml:Eval:20
+    component: azureml:Eval:21
     inputs:
-      scoring_result: jobs.score-job.outputs.score_output
+      scoring_result: ${{jobs.score-job.outputs.score_output}}
     outputs:
-      eval_output: outputs.pipeline_job_evaluation_report
+      eval_output: ${{outputs.pipeline_job_evaluation_report}}
