@@ -36,49 +36,49 @@ defaults:
   component_job:
     datastore: azureml:workspaceblobstore
     compute:
-      target: cpu-cluster
+      target: azureml:cpu-cluster
 
 jobs:
   prep-job:
     type: component_job
-    component: azureml:PrepTaxiData:1
+    component: file:./prep.yml
     inputs:
-      raw_data: inputs.pipeline_job_input
+      raw_data: ${{inputs.pipeline_job_input}}
     outputs:
-      prep_data: outputs.pipeline_job_prepped_data
+      prep_data: ${{outputs.pipeline_job_prepped_data}}
 
   transform-job:
     type: component_job
-    component: azureml:TaxiFeatureEngineering:1
+    component: file:./transform.yml
     inputs:
-      clean_data: jobs.prep-job.outputs.prep_data
+      clean_data: ${{jobs.prep-job.outputs.prep_data}}
     outputs:
-      transformed_data: outputs.pipeline_job_transformed_data
+      transformed_data: ${{outputs.pipeline_job_transformed_data}}
 
   train-job:
     type: component_job
-    component: azureml:TrainLinearRegressionModel:1
+    component: file:./train.yml
     inputs:
-      training_data: jobs.transform-job.outputs.transformed_data
+      training_data: ${{jobs.transform-job.outputs.transformed_data}}
     outputs:
-      model_output: outputs.pipeline_job_trained_model
-      test_data: outputs.pipeline_job_test_data
+      model_output: ${{outputs.pipeline_job_trained_model}}
+      test_data: ${{outputs.pipeline_job_test_data}}
   
   predict-job:
     type: component_job
-    component: azureml:PredictTaxiFares:1
+    component: file:./predict.yml
     inputs:
-      model_input: jobs.train-job.outputs.model_output
-      test_data: jobs.train-job.outputs.test_data
+      model_input: ${{jobs.train-job.outputs.model_output}}
+      test_data: ${{jobs.train-job.outputs.test_data}}
     outputs:
-      predictions: outputs.pipeline_job_predictions
+      predictions: ${{outputs.pipeline_job_predictions}}
 
   score-job:
     type: component_job
-    component: azureml:ScoreModel:1
+    component: file:./score.yml
     inputs:
-      predictions: jobs.predict-job.outputs.predictions
-      model: jobs.train-job.outputs.model_output
+      predictions: ${{jobs.predict-job.outputs.predictions}}
+      model: ${{jobs.train-job.outputs.model_output}}
     outputs:
-      score_report: outputs.pipeline_job_score_report
+      score_report: ${{outputs.pipeline_job_score_report}}
 # </jobs>
