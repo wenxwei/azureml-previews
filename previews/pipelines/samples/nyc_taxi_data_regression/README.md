@@ -24,29 +24,10 @@
 
 #### 1. Make sure you are in the `nyc_taxi_data_regression` directory for this sample.
 
-#### 2. Register the Components with the AzureML workspace.
 
-```
-az ml component create --file prep.yml
-az ml component create --file transform.yml
-az ml component create --file train.yml
-az ml component create --file predict.yml
-az ml component create --file score.yml
+#### 2. Submit the Pipeline Job. 
 
-```
-If you are re-running samples, the version specified in the component yaml may already be registered. You can edit the component yaml to bump up the version or you can simply specify a new version using the command line.
-
-```
-az ml component create --file prep.yml --set version=<version_number>
-az ml component create --file transform.yml --set version=<version_number>
-az ml component create --file train.yml --set version=<version_number>
-az ml component create --file predict.yml --set version=<version_number>
-az ml component create --file score.yml --set version=<version_number>
-```
-
-#### 3. Submit the Pipeline Job. 
-
-Make sure the version of the components you registered matches with the version defined in pipeline.yml. Also, make sure the compute cluster used in pipeline.yml is the one that is actually available in your workspace. 
+Make sure the compute cluster used in pipeline.yml is the one that is actually available in your workspace. 
 
 Submit the Pipeline Job
 ```
@@ -62,42 +43,6 @@ Once you submit the job, you will find the URL to the Studio UI view the job gra
 
 Sample output
 ```
-C:\Users\shbijlan\repos\azureml-previews\previews\pipelines\samples\nyc_taxi_data_regression>az ml component create --file score.yml
-Command group 'ml component' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
-Uploading score_src:   0%|                                                                 | 0.00/2.24k [00:00<?, ?B/s]
-{
-  "code": "azureml:/subscriptions/15ae9cb6-95c1-483d-a0e3-b1a1a3b06324/resourceGroups/shbijlan/providers/Microsoft.MachineLearningServices/workspaces/shbijlan/codes/74a81185-e2e5-43fc-b414-18a69bb25b26/versions/1",
-  "command": "python score.py  --predictions {inputs.predictions}  --model {inputs.model}  --score_report {outputs.score_report}",
-  "creation_context": {
-    "created_at": "2021-07-21T23:10:33.898937+00:00",
-    "created_by": "Sharmeelee Bijlani",
-    "created_by_type": "User",
-    "last_modified_at": "2021-07-21T23:10:33.994512+00:00"
-  },
-  "display_name": "Score",
-  "environment": "azureml:/subscriptions/15ae9cb6-95c1-483d-a0e3-b1a1a3b06324/resourceGroups/shbijlan/providers/Microsoft.MachineLearningServices/workspaces/shbijlan/environments/AzureML-sklearn-0.24-ubuntu18.04-py37-cuda11-gpu/versions/3",
-  "inputs": {
-    "model": {
-      "optional": false,
-      "type": "path"
-    },
-    "predictions": {
-      "optional": false,
-      "type": "path"
-    }
-  },
-  "is_deterministic": true,
-  "name": "Score",
-  "outputs": {
-    "score_report": {
-      "type": "path"
-    }
-  },
-  "tags": {},
-  "type": "command_component",
-  "version": 30
-}
-
 
 C:\Users\shbijlan\repos\azureml-previews\previews\pipelines\samples\nyc_taxi_data_regression>az ml  job create --file pipeline.yml
 Command group 'ml job' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
