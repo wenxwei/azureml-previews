@@ -1,5 +1,5 @@
 
-Specify we file on we public URL as input:
+Specify web file with public URL as input:
     https://dprepdata.blob.core.windows.net/demo/Titanic.csv
 
 ```

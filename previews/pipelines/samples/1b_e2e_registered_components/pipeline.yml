@@ -1,4 +1,3 @@
-name: Train_score_eval_pipeline_job
 type: pipeline_job
 
 inputs:

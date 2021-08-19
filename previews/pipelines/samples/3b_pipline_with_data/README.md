@@ -2,10 +2,11 @@
 This is a simple pipeline with 3 Component Jobs with data dependencies.
  
 ```
-
+az ml job create --file pipeline.yml 
 ```
 
-# az ml job create --file pipeline.yml 
+Sample output
+```
 Command group 'ml job' is experimental and under development. Reference and support levels: https://aka.ms/CLI_refstatus
 Custom pipeline job names are not supported yet. Please refer to the created pipeline job using the name: 12413cba-1489-4907-800b-e8be6f3b9dca
 {

@@ -16,7 +16,7 @@ jobs:
     type: component_job
     component: file:./component.yml
     compute:
-      target: azureml:ManojCluster
+      target: azureml:cpu-cluster
     inputs:
       sample_input_data: ${{inputs.pipeline_sample_input_data}}
       #This input has a default value in the component so can skip it. 
