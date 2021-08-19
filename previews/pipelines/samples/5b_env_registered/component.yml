@@ -7,7 +7,7 @@ version: 1
 code:
   local_path: ./src
 
-environment: azureml:AzureML-Minimal:1
+environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
 
 command: >-
   python hello.py

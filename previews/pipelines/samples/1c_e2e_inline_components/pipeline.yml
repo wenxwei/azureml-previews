@@ -52,7 +52,7 @@ jobs:
           type: path
       code:
         local_path: ./train_src
-      environment: azureml:AzureML-Minimal:1
+      environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
       command: >-
         python train.py 
         --training_data ${{inputs.training_data}} 
@@ -84,7 +84,7 @@ jobs:
       outputs:
         score_output:
           type: path
-      environment: azureml:AzureML-Minimal:1
+      environment: azureml:AAzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
       code:
         local_path: ./score_src
       command: >-
@@ -112,7 +112,7 @@ jobs:
       outputs:
         eval_output:
           type: path
-      environment: azureml:AzureML-Minimal:1
+      environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
       code:
         local_path: ./eval_src
       command: >-

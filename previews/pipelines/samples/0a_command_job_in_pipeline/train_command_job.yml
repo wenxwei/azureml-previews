@@ -17,7 +17,7 @@ outputs:
       path: /iris-training-reports
 code:
   local_path: ./train_src
-environment: azureml:AzureML-Minimal:1
+environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
 compute:
   target: azureml:cpu-cluster
 command: >-

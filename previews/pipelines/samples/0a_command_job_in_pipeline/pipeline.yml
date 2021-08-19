@@ -41,7 +41,7 @@ jobs:
       model_output: ${{outputs.pipeline_job_trained_model}}
     code:
       local_path: ./train_src
-    environment: azureml:AzureML-Minimal:1
+    environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
     command: >-
       python train.py 
       --training_data ${{inputs.training_data}} 
@@ -57,7 +57,7 @@ jobs:
       test_data: ${{inputs.pipeline_job_test_input}}
     outputs:
       score_output: ${{outputs.pipeline_job_scored_data}}
-    environment: azureml:AzureML-Minimal:1
+    environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
     code:
       local_path: ./score_src
     command: >-
@@ -73,7 +73,7 @@ jobs:
     outputs:
       eval_output: ${{outputs.pipeline_job_evaluation_report}}
 
-    environment: azureml:AzureML-Minimal:1
+    environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
     code:
       local_path: ./eval_src
     command: >-

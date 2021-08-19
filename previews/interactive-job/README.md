@@ -23,7 +23,7 @@ Interactive job is supported on **AMLArc Compute** and will be available on AML 
 ```dotnetcli
 name: <your job name> #job name needs to be updated every time you submit it
 command: sleep infinity # you can add other commands before "sleep infinity" but make sure "sleep infinity" is put at the end to make sure the resource is reserved.
-environment: azureml:AzureML-Minimal:1
+environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
 compute:
   target: azureml:<your attached amlarc compute name>
 interaction_endpoints:
