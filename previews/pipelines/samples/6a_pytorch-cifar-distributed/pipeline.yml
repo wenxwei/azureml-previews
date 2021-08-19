@@ -1,0 +1,31 @@
+
+type: pipeline_job
+
+inputs:
+  pipeline_job_training_input: 
+    data:
+      local_path: data
+    mode: mount
+compute:
+  target: azureml:gpu-cluster
+  instance_count: 2
+
+defaults:
+  component_job:
+    datastore: azureml:workspaceblobstore
+    compute:
+      target: azureml:gpu-cluster
+
+jobs:
+  train-job:
+    type: component_job
+    component: file:./component.yml
+    inputs:
+      cifar-data: ${{inputs.pipeline_job_training_input}}
+    outputs:
+      model_output: ${{outputs.pipeline_job_trained_model}}
+    overrides:
+      distribution:
+        type: pytorch 
+        process_count: 2
+  
