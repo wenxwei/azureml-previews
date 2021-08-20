@@ -2,13 +2,15 @@
 type: pipeline_job
 
 inputs:
-  pipeline_job_training_input: 
+  pipeline_job_cifar_uri: "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
+
+outputs:
+  pipeline_job_trained_model:
     data:
-      local_path: data
-    mode: mount
-compute:
-  target: azureml:gpu-cluster
-  instance_count: 2
+      path: /cifar-model
+  pipeline_job_training_data:
+    data: 
+      path: /cifar-model
 
 defaults:
   component_job:
@@ -17,15 +19,25 @@ defaults:
       target: azureml:gpu-cluster
 
 jobs:
-  train-job:
+  download-job:
     type: component_job
-    component: file:./component.yml
+    component: file:./cifar-download-component.yml
     inputs:
-      cifar-data: ${{inputs.pipeline_job_training_input}}
+      cifar_uri: ${{inputs.pipeline_job_cifar_uri}}
     outputs:
-      model_output: ${{outputs.pipeline_job_trained_model}}
-    overrides:
-      distribution:
-        type: pytorch 
-        process_count: 2
+      cifar_data_output: ${{outputs.pipeline_job_training_data}}
+
+# this is commented until command component supports distribution and
+# pipeline job supports overrides
+#  train-job:
+#    type: component_job
+#    component: file:./cifar-train-component.yml
+#    inputs:
+#      cifar_data: ${{jobs.download-job.cifar_data_output}}
+#    outputs:
+#      model_output: ${{outputs.pipeline_job_trained_model}}
+#    overrides:
+#      distribution:
+#        type: pytorch 
+#        process_count: 2
   
