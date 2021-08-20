@@ -9,13 +9,13 @@ description: Downloads and unzips the cifar-10 dataset
 code: 
   local_path: cifar-download-src
 command: >-
-  sh download.sh "${{inputs.cifar_uri}}" ${{outputs.cifar_data}}
+  sh download.sh "${{inputs.cifar_uri}}" ${{outputs.cifar_data_output}}
 inputs:
   cifar_uri:
     type: string
     default: "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
 outputs:
-  cifar_data:
+  cifar_data_output:
     type: path
 environment: azureml:AzureML-pytorch-1.7-ubuntu18.04-py37-cuda11-gpu:1
 
