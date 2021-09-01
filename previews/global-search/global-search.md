@@ -1,16 +1,19 @@
 # Search for Azure Machine Learning assets across multiple workspaces (Private Preview)
 
 ## Overview 
+
 Azure ML users can now search for machine learning assets such as jobs, models, and components across all workspaces, resource groups, and subscriptions in their organization through a unified global view. 
 
 ## Get started 
 
 ### Global homepage 
+
 From this centralized global view, select from recently visited workspaces or browse documentation and tutorial resources.
 
 ![global view](./media/globalview.jpg)
 
-### Search 
+### Search
+
 Type search text into the global search bar and hit enter to trigger a search. The search result page will land on the most relevant result asset page.
 The search will match the search text in all the metadata fields for the given asset. 
 
@@ -23,5 +26,24 @@ Change the scope of applicable subscriptions and workspaces by clicking the 'Cha
 ![scope change](./media/settings.jpg)
 
 ### Results
+
+Explore the Jobs, Models, and Components tabs to see all search matches. Click on an asset to be directed to the details page in the context of the relevant workspace. 
+
+![search results](./media/results.jpg)
+
+### Filters
+
+To add more specificity to the search results, use the column filters sidebar. 
+
+![search filters](./media/filters.jpg)
+
+### Custom views
+
+![custom column views](./media/views.jpg)
+
+
+
+## Known Issues
+
 
 
