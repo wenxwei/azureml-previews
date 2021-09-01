@@ -39,11 +39,11 @@ To add more specificity to the search results, use the column filters sidebar.
 
 ### Custom views
 
+Customize the display of columns in the search results table. These views can be saved and shared as well. 
+
 ![custom column views](./media/views.jpg)
-
-
 
 ## Known Issues
 
-
+If you have previously used this feature, a search result error may occur. Please reselect your preferred workspaces in the Directory + Subscription + Workspace tab.
 
