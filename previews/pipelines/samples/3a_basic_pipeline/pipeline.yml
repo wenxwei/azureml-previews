@@ -1,16 +1,16 @@
-type: pipeline_job
+type: pipeline
+description: "Basic Pipeline Job with 3 Hello World components"
 
-compute:
-  target: azureml:cpu-cluster
+compute: azureml:cpu-cluster
 
 jobs:
   componentA_job:
-    type: component_job
+    type: component
     component: file:./componentA.yml
   componentB_job:
-    type: component_job
+    type: component
     component: file:./componentB.yml
   componentC_job:
-    type: component_job
+    type: component
     component: file:./componentC.yml
 

@@ -1,37 +1,36 @@
-name: Train_score_eval_pipeline_job
-type: pipeline_job
+
+type: pipeline
+
+description: "Dummy train-score-eval pipeline with local components"
 
 inputs:
-  pipeline_job_training_input: #using dataset, can use datastore + datapath also
-    data: 
+  pipeline_job_training_input: 
+    dataset: 
       local_path: ./data
-  pipeline_job_test_input:
-    data:
-      local_path: ./data
+#  pipeline_job_test_input: 
+#    dataset: 
+#      local_path: ./data
   pipeline_job_training_max_epocs: 20
   pipeline_job_training_learning_rate: 1.8
   pipeline_job_learning_rate_schedule: 'time-based'
 
 outputs: 
   pipeline_job_trained_model:
-    data: 
-      path: /trained-model
-  pipeline_job_scored_data:
-    data: 
-      path: /scored_data
+    mode: upload
+#  pipeline_job_scored_data:
+#    mode: upload
   pipeline_job_evaluation_report:
-    data: 
-      path: /report
+    mode: upload
 
-defaults:
-  component_job:
-    datastore: azureml:workspaceblobstore
-    compute:
-      target: azureml:cpu-cluster
+#settings: 
+#  datastore: azureml:workspaceblobstore
+
+compute: azureml:cpu-cluster
 
 jobs:
   train-job:
-    type: component_job
+    type: component
+    compute: azureml:cpu-cluster
     component: file:./train.yml
     inputs:
       training_data: ${{inputs.pipeline_job_training_input}}
@@ -42,17 +41,22 @@ jobs:
       model_output: ${{outputs.pipeline_job_trained_model}}
   
   score-job:
-    type: component_job
+    type: component
     component: file:./score.yml
+    compute: azureml:cpu-cluster
     inputs:
       model_input: ${{jobs.train-job.outputs.model_output}}
-      test_data: ${{inputs.pipeline_job_test_input}}
+      test_data: 
+        dataset:
+          local_path: ./data
     outputs:
-      score_output: ${{outputs.pipeline_job_scored_data}}
+      score_output: 
+        mode: upload
 
   evaluate-job:
-    type: component_job
+    type: component
     component: file:./eval.yml
+    compute: azureml:cpu-cluster
     inputs:
       scoring_result: ${{jobs.score-job.outputs.score_output}}
     outputs:

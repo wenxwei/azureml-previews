@@ -1,12 +1,12 @@
 
-type: pipeline_job
+type: pipeline
 
 inputs:
   pipeline_job_training_input:
-    data: 
+    dataset: 
       local_path: ./data
   pipeline_job_test_input:
-    data:
+    dataset:
       local_path: ./data
   pipeline_job_training_max_epocs: 20
   pipeline_job_training_learning_rate: 1.8
@@ -14,24 +14,28 @@ inputs:
 
 outputs: 
   pipeline_job_trained_model:
-    data: 
-      path: /trained-model
+    mode: upload
+  #  data: 
+  #    path: /trained-model
   pipeline_job_scored_data:
-    data: 
-      path: /scored_data
+    mode: upload
+  #  data: 
+  #    path: /scored_data
   pipeline_job_evaluation_report:
-    data: 
-      path: /report
+    mode: upload
+  #  data: 
+  #    path: /report
 
-defaults:
-  command_job:
-    datastore: azureml:workspaceblobstore
-    compute:
-      target: azureml:cpu-cluster
+settings:
+  datastore: azureml:testepstorageyzmrkcbu_azureml
+
+compute: azureml:cpu-cluster
 
 jobs:
   train-job:
-    type: command_job
+    display_name: "my-train-job"
+    type: command
+    compute: azureml:cpu-cluster
     inputs:
       training_data: ${{inputs.pipeline_job_training_input}}
       max_epocs: ${{inputs.pipeline_job_training_max_epocs}}
@@ -51,7 +55,9 @@ jobs:
       --model_output ${{outputs.model_output}}
   
   score-job:
-    type: command_job
+    display_name: "my-score-job"
+    type: command
+    compute: azureml:cpu-cluster
     inputs:
       model_input: ${{jobs.train-job.outputs.model_output}}
       test_data: ${{inputs.pipeline_job_test_input}}
@@ -67,17 +73,20 @@ jobs:
       --score_output ${{outputs.score_output}}
 
   evaluate-job:
-    type: command_job
+    display_name: "my-evaluate-job"
+    type: command
+    compute: azureml:cpu-cluster
     inputs:
       scoring_result: ${{jobs.score-job.outputs.score_output}}
     outputs:
       eval_output: ${{outputs.pipeline_job_evaluation_report}}
 
     environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
-    code:
-      local_path: ./eval_src
-    command: >-
-      python eval.py 
-      --scoring_result ${{inputs.scoring_result}} 
-      --eval_output ${{outputs.eval_output}}
+    #code:
+    #  local_path: ./eval_src
+    command: echo "hello world"
+    #command: >-
+    #  python eval.py 
+    #  --scoring_result ${{inputs.scoring_result}} 
+    #  --eval_output ${{outputs.eval_output}}
 

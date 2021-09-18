@@ -1,7 +1,7 @@
 name: Train
 display_name: Train
-version: 21
-type: command_component
+version: 31
+type: command
 inputs:
   training_data: 
     type: path

@@ -1,0 +1,5 @@
+type: command
+command: echo "hello"
+environment:
+  image: python
+compute: azureml:cpu-cluster

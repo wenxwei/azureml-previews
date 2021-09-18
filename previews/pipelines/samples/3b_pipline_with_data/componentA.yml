@@ -1,4 +1,4 @@
-type: command_component
+type: command
 
 name: componentA
 display_name: componentA
@@ -16,8 +16,7 @@ code:
   local_path: ./componentA_src
 
 environment: 
-  docker: 
-    image: docker.io/python
+  image: python
 
 command: >-
   python hello.py --componentA_input ${{inputs.componentA_input}} --componentA_output ${{outputs.componentA_output}}

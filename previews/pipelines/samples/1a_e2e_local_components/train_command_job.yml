@@ -2,6 +2,8 @@ $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 # this command job does not work. 
 # It is to illustrate literal inputs and named output support required in command job for parity with command component job.
 type: command_job
+name: awesome_job_24234
+display_name: awesome_job
 inputs:
   training_input: 
     data: 

@@ -1,7 +1,7 @@
 name: Score
-version: 21
+version: 31
 display_name: Score
-type: command_component
+type: command
 inputs:
   model_input:
     type: path

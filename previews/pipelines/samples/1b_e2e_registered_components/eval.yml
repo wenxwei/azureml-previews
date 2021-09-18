@@ -1,7 +1,7 @@
 name: Eval
-version: 21
+version: 31
 display_name: Eval
-type: command_component
+type: command
 inputs:
   scoring_result:
     type: path

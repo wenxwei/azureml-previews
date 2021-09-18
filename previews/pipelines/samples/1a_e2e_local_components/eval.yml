@@ -1,14 +1,14 @@
 name: Eval
 version: 10
 display_name: Eval
-type: command_component
+type: command
 inputs:
   scoring_result:
     type: path
 outputs:
   eval_output:
     type: path
-environment: AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
+environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
 code:
   local_path: ./eval_src
 command: >-
