@@ -28,6 +28,7 @@ jobs:
     component: file:./componentB.yml
     inputs:
       componentB_input: ${{jobs.componentA_job.outputs.componentA_output}}
+        mode: download
     outputs:
       componentB_output: ${{outputs.pipeline_sample_output_data_B}}
   componentC_job:
