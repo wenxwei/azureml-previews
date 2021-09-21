@@ -1,0 +1,11 @@
+type: pipeline
+jobs:
+  hello:
+    type: command
+    command: printenv
+    environment:
+      image: python
+    compute: azureml:cpu-cluster
+    environment_variables:
+      FOO: "bar"
+
