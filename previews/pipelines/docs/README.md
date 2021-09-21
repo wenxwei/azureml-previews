@@ -24,23 +24,7 @@ Pre-requisites:
 
 Steps:
 1. Make sure your setup is working with either of the list commands: `az ml compute list`, `az ml jobs list`, or `az ml data list`
-
-2. Enable private preview features.
-Linux/Bash:
-```
- export AZURE_ML_CLI_PRIVATE_FEATURES_ENABLED="true"
-```
-Windows Command Prompt:
-```
-set AZURE_ML_CLI_PRIVATE_FEATURES_ENABLED=true
-```
-Windows PowerShell:
-```
-$Env:AZURE_ML_CLI_PRIVATE_FEATURES_ENABLED=$true
-```
-
-You may want to consider adding this command to the scripts that are run when a session is started such as [.bashrc](https://linuxize.com/post/bashrc-vs-bash-profile/) in Linux.
-
+2. Install a private package if needed (if you are testing a latest bug fix). See instructions at the end. 
 3. Clone this samples repo: 
 
 ```
