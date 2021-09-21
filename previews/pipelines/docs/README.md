@@ -72,7 +72,7 @@ az extension remove -n ml; az extension remove -n azure-cli-ml
 
 2. Install the private package
 ```
-az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.79-py3-none-any.whl --pip-extra-index-urls https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2 -y
+az extension add --source https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-cli-v2/ml-0.0.12_october_cand-py3-none-any.whl --yes
 ```
 
 3. Follow the setup instructions as documented here: https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-cli#set-up
