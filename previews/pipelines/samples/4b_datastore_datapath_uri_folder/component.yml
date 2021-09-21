@@ -17,8 +17,14 @@ outputs:
 code:
   local_path: ./src
 
-environment: 
-  image: python
+environment: azureml:bugbash-train1-sidecar:1
+#environment: 
+#  image: python
+
+environment_variables:
+  AZ_BATCHAI_CONFIG_SidecarContainerEnvironmentName: "bugbash-train1-sidecar"
+  AZ_BATCHAI_CONFIG_SidecarContainerEnvironmentVersion: '1'
+  AZ_BATCHAI_CONFIG_SidecarContainerImageName: 'sidecar/dpv2-train1-sidecar-0'
 
 command: >-
   python hello.py  
