@@ -15,19 +15,14 @@ inputs:
 outputs: 
   pipeline_job_trained_model:
     mode: upload
-  #  data: 
-  #    path: /trained-model
   pipeline_job_scored_data:
     mode: upload
-  #  data: 
-  #    path: /scored_data
   pipeline_job_evaluation_report:
     mode: upload
-  #  data: 
-  #    path: /report
 
-settings:
-  datastore: azureml:testepstorageyzmrkcbu_azureml
+#specify a different store than the workspace default datastore
+#settings:
+#  datastore: azureml:testepstorageyzmrkcbu_azureml
 
 compute: azureml:cpu-cluster
 
@@ -35,7 +30,8 @@ jobs:
   train-job:
     display_name: "my-train-job"
     type: command
-    compute: azureml:cpu-cluster
+    #this job will use the default compute specified at pipeline job level.
+    #compute: azureml:cpu-cluster
     inputs:
       training_data: ${{inputs.pipeline_job_training_input}}
       max_epocs: ${{inputs.pipeline_job_training_max_epocs}}
@@ -57,7 +53,8 @@ jobs:
   score-job:
     display_name: "my-score-job"
     type: command
-    compute: azureml:cpu-cluster
+    # this job will use a different compute than the default specified at pipeline job level.
+    compute: azureml:gpu-cluster
     inputs:
       model_input: ${{jobs.train-job.outputs.model_output}}
       test_data: ${{inputs.pipeline_job_test_input}}

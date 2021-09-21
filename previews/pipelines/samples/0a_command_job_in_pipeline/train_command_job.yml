@@ -12,15 +12,13 @@ inputs:
   learning_rate: 1.8
 outputs:
   trained_model:
-#    data:
-#      path: /irs-model-folder
+    mode: upload
   reports:
-#    data: 
-#      path: /iris-training-reports
+    mode: upload
 code:
   local_path: ./train_src
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu:5
-compute: azureml:cpu-cluster
+#compute: azureml:cpu-cluster
 command: >-
   python train1.py 
   --training_data "${{inputs.training_input}}"

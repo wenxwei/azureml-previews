@@ -1,0 +1,16 @@
+type: pipeline
+description: "Show the MPI training environment"
+
+jobs:
+  tf-job:
+    type: component
+    component: file:./component.yml
+    compute: azureml:gpu-cluster
+    overrides:
+      resources:
+        instance_count: 3
+      distribution:
+        type: mpi
+        process_count_per_instance: 3
+
+        
