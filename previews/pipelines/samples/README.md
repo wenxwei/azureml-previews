@@ -12,9 +12,10 @@ Sample Link|Description
 [3a_basic_pipeline](./3a_basic_pipeline) | Simple Pipeline Job with 3 Hello World components
 [3b_pipline_with_data](./3b_pipline_with_data) | Pipeline Job with data dependencies between components
 [4a_local_data_input](./4a_local_data_input) | Example of using data in a local folder as pipeline input
-[4b_datastore_datapath](./4b_datastore_datapath) | Example of using data from a Workspace Datastore as pipeline input
-[4c_dataset_input](./4c_dataset_input) | Example of using data from a Dataset as pipeline input
-[4d_web_url_input](./4d_web_url_input) | Example of using a file hosted at a web URL as pipeline input
+[4b_datastore_datapath_uri_folder](./4b_datastore_datapath_uri_folder) | Example of using data folder from a Workspace Datastore as pipeline input
+[4c_datastore_datapath_uri_file](./4c_datastore_datapath_uri_file) | Example of using data file from a Workspace Datastore as pipeline input
+[4d_dataset_input](./4d_dataset_input) | Example of using data from a Dataset as pipeline input
+[4e_web_url_input](./4d_web_url_input) | Example of using a file hosted at a web URL as pipeline input
 [5a_env_public_docker_image](./5a_env_public_docker_image) | Example of specifying a docker image for the component environment
 [5b_env_registered](./5b_env_registered) | Example of using a registered AzureML Environment in a component
 [5c_env_conda_file](./5c_env_conda_file) | Example of using a docker image with a conda file for additional packages in a component

@@ -1,22 +1,23 @@
-type: pipeline_job
+type: pipeline
 
 inputs:
   pipeline_sample_input_data:
-    data: 
-      path: https://dprepdata.blob.core.windows.net/demo/Titanic.csv
+    file: https://dprepdata.blob.core.windows.net/demo/Titanic.csv
+# or
+#  pipeline_sample_input_data:
+#    dataset:
+#    - file: https://dprepdata.blob.core.windows.net/demo/Titanic.csv
+
   pipeline_sample_input_string: 'Hello_Pipeline_World'
 
 outputs:
   pipeline_sample_output_data:
-    data:
-      datastore: azureml:workspaceblobstore
 
 jobs:
   hello_python_world_job:
-    type: component_job
+    type: component
     component: file:./component.yml
-    compute:
-      target: azureml:cpu-cluster
+    compute: azureml:cpu-cluster
     inputs:
       sample_input_data: ${{inputs.pipeline_sample_input_data}}
       sample_input_string: ${{inputs.pipeline_sample_input_string}}
