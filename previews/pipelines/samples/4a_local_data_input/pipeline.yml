@@ -1,5 +1,5 @@
 type: pipeline
-
+description: "Example of using data in a local folder as pipeline input"
 inputs:
   pipeline_sample_input_data:
     dataset:

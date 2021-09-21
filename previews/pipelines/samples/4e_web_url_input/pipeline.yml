@@ -1,12 +1,13 @@
 type: pipeline
-
+description: "Example of using a file hosted at a web URL as pipeline input"
 inputs:
   pipeline_sample_input_data:
     file: https://dprepdata.blob.core.windows.net/demo/Titanic.csv
 # or
 #  pipeline_sample_input_data:
 #    dataset:
-#    - file: https://dprepdata.blob.core.windows.net/demo/Titanic.csv
+#      paths:
+#      - file: https://dprepdata.blob.core.windows.net/demo/Titanic.csv
 
   pipeline_sample_input_string: 'Hello_Pipeline_World'
 
