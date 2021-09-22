@@ -19,4 +19,7 @@ Sample Link|Description
 [5a_env_public_docker_image](./5a_env_public_docker_image) | Example of specifying a docker image for the component environment
 [5b_env_registered](./5b_env_registered) | Example of using a registered AzureML Environment in a component
 [5c_env_conda_file](./5c_env_conda_file) | Example of using a docker image with a conda file for additional packages in a component
+[6a_tf_hello_world](./6a_tf_hello_world) | TensorFlow hello-world showing training environment with $TF_CONFIG
+[6b_mpi_hello_world](./6b_mpi_hello_world) | MPI hello world
+6c_pytorch_hello_world](./6c_pytorch_hello_world) | Prints the environment variables useful for scripts running in a PyTorch training environment
 [nyc_taxi_data_regression](./nyc_taxi_data_regression) | Example of predicting taxi fares in NYC with sklearn Linear Regression

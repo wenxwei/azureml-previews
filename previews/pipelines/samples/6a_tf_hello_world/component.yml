@@ -1,6 +1,6 @@
 type: command
 
-description: Train a basic neural network with TensorFlow on the MNIST dataset, distributed via TensorFlow.
+description: "TensorFlow hello-world showing training environment with $TF_CONFIG"
 
 name: TF-hello-world
 display_name: TF-hello-world
