@@ -15,7 +15,7 @@ From this centralized global view, select from recently visited workspaces or br
 ### Search
 
 Type search text into the global search bar and hit enter to trigger a search. The search result page will land on the most relevant result asset page.
-The search will match the search text in all the metadata fields for the given asset. 
+The search will match the search text in all the metadata fields for the given asset. Results are sorted by relevance as determined by the index service relevancy weightings for the asset columns. 
 
 ![search bar](./media/searchbar.jpg)
 
