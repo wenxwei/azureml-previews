@@ -1,4 +1,4 @@
-# Connect to Jupyter Notebook with "az ml notebook up" in 2.0 CLI (Private Preview)
+# Connect to Jupyter Notebook with "az ml notebook up" in CLI v2 (Private Preview)
 
 ## Overview 
 
@@ -6,21 +6,30 @@ ML professionals are used to typing `jupyter notebook` to start their ML data & 
 
 ## Prerequisite 
 
-* To use Azure machine learning, you must have an Azure subscription. If you don't have an Azure subscription, create a free account before you begin. Try the [free or paid version of Azure Machine Learning](https://azure.microsoft.com/free/) today.
+* Azure subscription. If you don't have an Azure subscription, , sign up to try the [free or paid version of Azure Machine Learning](https://azure.microsoft.com/free/) today.
 
-* You must install and configure the Azure CLI and ML extension. For more information, see [Install, set up, and use the CLI (v2) (preview)](how-to-configure-cli.md). 
+* Azure CLI and ML extension. For more information, see [Install, set up, and use the CLI (v2) (preview)](how-to-configure-cli.md). 
 
-* You must have an Azure Resource group, in which you (or the service principal you use) need to have `Contributor` access. You'll have such a resource group if you configured your ML extension per the above article. 
-
-* You must have an Azure Machine Learning workspace. You'll have such a workspace if you configured your ML extension per the above article.
-
-* You must have an existing compute resource in your workspace 
+* Existing compute resource in your workspace. Learn how to [create an Azure Machine Learning compute cluster](https://docs.microsoft.com/azure/machine-learning/how-to-create-attach-compute-cluster?tabs=python). 
 
 
 ## Get started 
 
+Now you have installed and set up the CLI v2, you can use the `az ml notebook up` for your model development. 
 
+### Create compute in CLI
 
+You can create an Azure Machine Learning compute cluster from the command line. For instance, the following commands will create one cluster named `cpu-cluster`.
+```dotnetcli
+az ml compute create -n cpu-cluster --type amlcompute --min-instances 0 --max-instances 10 
+```
+Note that you are not charged for compute at this point as `cpu-cluster` will remain at 0 nodes until a job is submitted. Learn more about how to [manage and optimize cost for AmlCompute](how-to-manage-optimize-cost.md#use-azure-machine-learning-compute-cluster-amlcompute).
+
+The following example in this article use `cpu-cluster`. Adjust these as needed to the name of your cluster.
+
+Use `az ml compute create -h` for more details on compute create options.
+
+### Create a  new notebook 
 
 ## Coming soon
 
